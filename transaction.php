@@ -77,7 +77,8 @@ if (!isset($_SESSION['accessApprove'])) {
                         <th scope="col" class="text-center">Buyer</th>
                         <th scope="col" class="text-center">Product</th>
                         <th scope="col" class="text-center">Pay Out Amount</th>
-                        <th scope="col" class="text-center" colspan="2">Action</th>
+                        <th scope="col" class="text-center">Active</th>
+                        <th scope="col" class="text-center">Deactive</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -146,7 +147,7 @@ if (!isset($_SESSION['accessApprove'])) {
     <?php include 'footer.php' ?>
     <script>
         $(document).ready(function() {
-            $('#myTable').DataTable();
+            $('#myTable1').DataTable();
         });
     
     function delFunction(){

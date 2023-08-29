@@ -11,20 +11,23 @@ if (!isset($_SESSION['accessApprove'])) {
     <style>
         /* ***************datatable css*****************  */
 
+        
         table {
             border-collapse: collapse;
             table-layout: fixed;
+            width: auto !important;
         }
 
         th {
             text-align: center !important;
+            padding-left: 0.5rem;
         }
 
 
         td {
             text-align: center;
             word-wrap: break-word !important;
-            width: 200px !important;
+            min-width: 200px !important;
             border-bottom: 2px solid #f2f2f2;
             align-items: center;
         }
@@ -74,7 +77,8 @@ if (!isset($_SESSION['accessApprove'])) {
                         <th scope="col" class="text-center">Name</th>
                         <th scope="col" class="text-center">Mobile</th>
                         <th scope="col" class="text-center">Email</th>
-                        <th scope="col" class="text-center" colspan="2">Action</th>
+                        <th scope="col" class="text-center">Edit</th>
+                        <th scope="col" class="text-center">Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -121,7 +125,9 @@ if (!isset($_SESSION['accessApprove'])) {
     <?php include 'footer.php' ?>
     <script>
         $(document).ready(function() {
-            $('#myTable').DataTable();
+            $('#myTable1').DataTable({
+                responsive: true,
+            });
         });
     
     function delFunction(){

@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/datatables.min.css">
-<!-- <script>
+<script>
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
     });
@@ -27,4 +27,4 @@
             return false;
         }
     }
-</script> -->
+</script>

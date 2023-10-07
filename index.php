@@ -13,14 +13,20 @@ if (isset($_SESSION['accessApprove'])) {
         body {
             background: #39846b8c;
         }
+        @media (max-width: 768px) {
+            .signin_page .row .sign_in_card {
+                padding: 1rem !important;
+            }
+        }
     </style>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <?php include 'navbarIndex.php' ?>
     
     <div class="signin_page">
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-4">
                 <div class="card">
                     <div class="sign_in_card">
                         <form action="backend/login.php" method="post">
@@ -28,14 +34,14 @@ if (isset($_SESSION['accessApprove'])) {
                                 <h3>Login</h3>
                             </center><br>
                             <div class="email_div">
-                                <input size="30" type="email" style="width: 100%;" id="email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" oninput="studentEmail(this)" name="email" placeholder="Enter your Email Address" required>
+                                <input size="30" type="email" style="width: 100%;" id="email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" oninput="userEmail(this)" name="email" placeholder="Enter your Email Address" required>
                             </div>
                             <br>
                             <div class="pass_div">
                                 <input size="30" type="password" style="width: 100%;" id="pwd" name="password" placeholder="Enter your Password" oninput="pwdPattern(this)" required>
                             </div>
                             <br>
-                            <!-- <div class="g-recaptcha" data-sitekey="6Le8ZhskAAAAAE27T_06pLIr0NUAM5MYg1068qUm"></div> -->
+                            <div class="g-recaptcha" data-sitekey="6Le8ZhskAAAAAE27T_06pLIr0NUAM5MYg1068qUm"></div>
                             <br>
                             <center><button type="submit" name="login" class="btn">Login</button></center>
                             <br>
@@ -46,7 +52,7 @@ if (isset($_SESSION['accessApprove'])) {
         </div>
     </div>
     <script>
-        function studentEmail(usr) {
+        function userEmail(usr) {
             var regexp =  /^[A-Za-z0-9+_.@-]+$/;
             var input = usr.value;
             if (input != "") {
